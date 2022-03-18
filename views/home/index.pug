@@ -1,0 +1,7 @@
+extends ../layout
+
+block body
+    h1 トップページ: カテゴリ一覧
+    ul
+        each category in categoryList
+            li: a(href=`/category/${category._id}`)= category.name

@@ -4,6 +4,7 @@ import session from 'express-session';
 import flash from 'connect-flash';
 import passport from 'passport';
 import mongoose from "mongoose";
+import {routes} from "./routes/index.js";
 
 const app = express();
 
@@ -28,6 +29,8 @@ app.use((req, res, next) => {
     res.locals.currentUser = req.user;
     next();
 });
+
+app.use(routes);
 
 try {
     await mongoose.connect("mongodb://localhost:27017/bbs");

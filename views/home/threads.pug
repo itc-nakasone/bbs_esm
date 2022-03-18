@@ -1,0 +1,12 @@
+extends ../layout
+
+block body
+    header
+        h2 スレッド一覧
+        a(href=`/threads/new/${category._id}`) 新規スレ作成
+    if threadList != null && threadList.length !== 0
+        ul
+            each thread in threadList
+                li: a(href=`/threads/read/${thread._id}/latest`) #{thread.title}
+    else
+        p スレッドがありません

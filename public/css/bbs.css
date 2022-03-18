@@ -1,0 +1,152 @@
+@font-face {
+    font-family: "aahub";
+    src: url("/font/aahub.woff2") format("woff2"),
+    url("/font/aahub.woff") format("woff");
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #697699;
+    background-color: #f2F3f7;
+    margin: 0;
+    width: 100%;
+}
+
+header {
+    margin-left: auto;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+main {
+    color: #697699;
+    background-color: #f2F3f7;
+    margin: 0;
+    padding-left: 15px;
+}
+
+/* messages */
+.thread-title {
+    color: #485269;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+nav {
+    margin-bottom: 1px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.message-box {
+    border-width: 1px;
+    border-style: none solid solid none;
+    border-color: #ddd;
+    background-color: #efEfef;
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 8px;
+}
+
+.br {
+    display: block;
+    background-color: transparent;
+}
+
+.message-box > .meta {
+    font-size: 14px;
+    color: #333;
+}
+
+.meta > .number {
+    margin-right: 5px;
+}
+
+.meta > .name {
+    color: green;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+.meta > .date {
+
+}
+
+.message-box > .content {
+    font-family: "aahub", monospace;
+    color: #333;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 10px 0;
+    white-space: pre-wrap;
+}
+
+/* 投稿ページ */
+.form {
+    padding-top: 15px;
+    padding-bottom: 60px;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 150px;
+    max-width: 575px;
+}
+
+.form > h1 {
+    border-bottom: 1px dotted #dcDCdc;
+    padding-bottom: 5px;
+    margin-bottom: 1em;
+    width: 100%;
+    color: #48526a;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.form label {
+    color: #48526a;
+    font-size: 14px;
+}
+
+.form textarea {
+    margin-bottom: 15px;
+    display: block;
+    padding: 6px 12px;
+    color: black;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button.submit-button {
+    -webkit-appearance: button;
+    cursor: pointer;
+    color: white;
+    background-color: #333;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #3e465a;
+    white-space: nowrap;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+    float: right;
+}
+
+/* ログイン */
+.login div {
+    text-align: right;
+    padding-right: 60%;
+}
+
+.login label {
+    color: #333;
+}
