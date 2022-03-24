@@ -1,7 +1,10 @@
-#form
-    form(action=`/thread/new/${cateogyr._id}` method="post")
-        .form-item
-            label(for="title") タイトル
-            input#title(type="text" name="title" required)
-        include ../partials/message_input
-        button.submit-button(type="submit") 書き込む
+extends ../layout
+
+block body
+    .form
+        form(action=`/threads/new/${category._id}` method="post")
+            .form-item
+                label(for="title") タイトル
+                input#title(type="text" name="title" required)
+            include ../partials/message_input
+            button.submit-button(type="submit") 書き込む

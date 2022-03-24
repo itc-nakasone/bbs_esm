@@ -29,7 +29,7 @@ const remove = async (req, res, next) => {
                 deleted: true,
             }
         }).exec();
-        res.locals.redirect = `threads/read/${req.params.tid}`;
+        res.locals.redirect = `/threads/read/${req.params.tid}/latest`;
         next();
     } catch (e) {
         console.error("Message failed to deleted (update).", e);
