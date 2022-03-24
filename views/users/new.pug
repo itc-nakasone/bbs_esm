@@ -1,0 +1,15 @@
+extends ../layout
+
+block body
+    .form.login
+        form(action="/users/new" method="post")
+            .form-item
+                label(for="username") username
+                input#username(name="username" type="text" required)
+            .form-item
+                label(for="view_name") 表示名
+                input#view_name(name="view_name" type="text" required)
+            .form-item
+                label(for="password") password
+                input#password(name="password" type="password" required)
+            button(type="submit") 登録

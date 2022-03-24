@@ -1,0 +1,16 @@
+extends ../layout
+
+block body
+    include ../partials/thread_nav
+    each message in messageList
+        .br
+            .message-box
+                .meta
+                    span.number= message.serial
+                    span.name= message.deleted ? "削除されました" : message.user.view_name
+                    span.date= message.postedAt
+                    if !message.deleted && currentUser && currentUser.equals(message.user)
+                        span.delete
+                            a.message-delete(href="javascript:void(0)"
+                                data-mid=message._id data-tid=thread._id) 削除
+                .content= message.deleted ? "あぼーん" : message.content

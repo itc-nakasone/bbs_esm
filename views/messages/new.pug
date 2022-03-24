@@ -1,0 +1,7 @@
+extends ../layout
+
+block body
+    #form
+        form(action=`/messages/new/${thread._id}` method="post")
+            include ../partials/message_input
+            button.submit-button(type="submit") 書き込む

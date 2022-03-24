@@ -1,0 +1,16 @@
+extends ../layout
+
+block body
+    h1 ログイン
+
+    .form.login
+        form(action="/users/login" method="post")
+            .form-item
+                label(for="username") username
+                input#username(name="username" type="text")
+            .form-item
+                label(for="password") password
+                input#password(type="password" name="password")
+            button(type="submit") ログイン
+            a(href="/users/new") 新規登録
+

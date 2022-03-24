@@ -5,6 +5,7 @@ import flash from 'connect-flash';
 import passport from 'passport';
 import mongoose from "mongoose";
 import {routes} from "./routes/index.js";
+import {User} from "./models/User.js";
 
 const app = express();
 
@@ -21,8 +22,11 @@ app.use(session({
     saveUninitialized: false
 }));
 app.use(flash());
-app.use(passport.initialize({}));
-app.use(passport.session({}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
     res.locals.loggedIn = req.isAuthenticated();

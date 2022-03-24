@@ -1,0 +1,15 @@
+h1.thread-title= thread.title
+nav
+    a.latest(href=`/threads/read/${thread._id}/latest`) 最新50件
+    | &nbsp;/&nbsp;
+    a.all(href=`/threads/read/${thread._id}/all`) 全件表示
+    | &nbsp;/&nbsp;
+    a.new-post(href=`/messages/new/${thread._id}`) レスを投稿
+    | &nbsp;/&nbsp;
+    if loggedIn
+        a(href="/users/logout") ログアウト
+    else
+        a(href="/users/login") ログイン
+    | &nbsp;/&nbsp;
+    if currentUser && currentUser.equals(thread.owner)
+        a#thread-delete(href="javascript:void(0)" data-tid=thread._id) スレ削除
