@@ -1,20 +1,11 @@
-class HomeController {
-    /**
-     * @param {import("express").Request} req
-     * @param {import("express").Response} res
-     */
-    static index(req, res) {
-        res.render("home/index");
-    }
-
-    /**
-     *
-     * @param {import("express").Request} req
-     * @param {import("express").Response} res
-     */
-    static threads(req, res) {
-        res.render("home/threads");
-    }
+const index = (req, res) => {
+    res.render("home/index");
 }
 
-export {HomeController};
+const threads = (req, res) => {
+    res.render("home/threads");
+}
+
+export const HomeController = {
+    index, threads
+};
